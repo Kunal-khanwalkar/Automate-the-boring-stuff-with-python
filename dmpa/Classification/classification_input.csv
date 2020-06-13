@@ -1,0 +1,14 @@
+Age,Salary,status,CLASS
+Young,High,Senior,Sales
+Senior,Low,Senior,Sales
+Senior,Low,Junior,Sales
+Young,High,Junior,Marketing
+Middle,High,Senior,Marketing
+Young,High,Junior,Sales
+Middle,High,Senior,Marketing
+Senior,Low,Junior,Marketing
+Middle,Low,Senior,Sales
+Senior,Low,Junior,Marketing
+Middle,Low,Junior,Sales
+Middle,High,Senior,Sales
+Young,High,Senior,Marketing

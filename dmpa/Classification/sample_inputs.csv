@@ -1,0 +1,64 @@
+Age,Car,Class
+20,M,Yes
+30,M,Yes
+25,T,No
+30,S,Yes
+40,S,Yes
+20,T,No
+30,M,Yes
+25,M,Yes
+40,M,Yes
+20,S,No
+
+
+age,income,student,credit_rating,buys_computer
+<=30,high,no,fair,no
+<=30,high,no,excel,no
+31..40,high,no,fair,yes
+>40,medium,no,fair,yes
+>40,low,yes,fair,yes
+>40,low,yes,excel,no
+31..40,low,yes,excel,yes
+<=30,medium,no,fair,no
+<=30,low,yes,fair,yes
+>40,medium,yes,fair,yes
+<=30,medium,yes,excel,yes
+31..40,medium,no,excel,yes
+31..40,high,yes,fair,yes
+>40,medium,no,excel,no
+
+
+
+
+outlook	temp	humidity	windy	play
+rainy	hot	high	FALSE	no
+rainy	hot	high	TRUE	no
+overcast	hot	high	FALSE	yes
+sunny	mild	high	FALSE	yes
+sunny	cool	normal	TRUE	no
+sunny	cool	normal	FALSE	yes
+overcast	cool	normal	TRUE	yes
+rainy	mild	high	FALSE	no
+rainy	cool	normal	FALSE	yes
+sunny	mild	normal	FALSE	yes
+rainy	mild	normal	TRUE	yes
+overcast	mild	high	TRUE	yes
+overcast	hot	normal	FALSE	yes
+sunny	mild	high	FALSE	no
+
+
+
+Hour,Weather,Accident,Stop,at,signal,Commute
+8,AM,Sunny,No,No,Long
+8,AM,Cloudy,No,Yes,Long
+10,AM,Sunny,No,No,Short
+9,AM,Rainy,Yes,No,Long
+9,AM,Sunny,Yes,Yes,Long
+10,AM,Sunny,No,No,Short
+10,AM,Cloudy,No,No,Short
+9,AM,Rainy,No,No,Medium
+9,AM,Sunny,Yes,No,Long
+10,AM,Cloudy,Yes,Yes,Long
+10,AM,Rainy,No,No,Short
+8,AM,Cloudy,Yes,No,Long
+9,AM,Sunny,No,No,Medium
