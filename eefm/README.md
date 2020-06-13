@@ -1,4 +1,4 @@
-#EEFM
+# EEFM
 
 Simply enter the equation and it shall print the answer.
 Example:
