@@ -82,6 +82,53 @@ def parseEquation(eq):
 
 
 
+def solveEquation(expr):
+	expr = re.sub('[()]','',expr)   
+	lis = expr.split(",")
+	calc = lis[0][0].lower()
+	using = lis[0][2].lower()
+	n = int(lis[2])
+	i = (float(lis[1]))/100.0
+	result = 0.0
+	if(calc == 'p' and using == 'f'):
+		result = 1.0/((1.0+(i))**n)
+	elif(calc == 'p' and using == 'a'):
+		temp = (1.0 + i)**n
+		result = (temp-1)/(i * temp)
+	elif(calc == 'p' and using == 'g'):
+		s = 1.0+i
+		k = 1.0/s
+		result = (k**2-k**(n+1))/((1-k)**2) - (n-1) * k**(n+1)/(1-k)
+	elif (calc == 'f' and using == 'p'):
+		result = (1.0+i)**n
+	elif(calc == 'f' and using == 'a'):
+		result = ((1.0 + i)**n - 1)/i
+	elif (calc == 'a' and using == 'p'):
+		temp = (1.0 + i)**n
+		result = (i*temp)/(temp-1)
+	elif (calc == 'a' and using == 'f'):
+		result = i/((1.0 + i)**n - 1)
+	elif (calc == 'a' and using == 'g'):
+		s = 1.0+i
+		k = 1.0/s
+		temp1 = (k**2-k**(n+1))/((1-k)**2) - (n-1) * k**(n+1)/(1-k)
+		temp = (1.0 + i)**n
+		result = ((i*temp)/(temp-1)) * temp1
+	if (calc == 'a' and using == 'f') or (calc == 'f' and using == 'a') or (calc == 'a'and using == 'p'):
+		result = round(result, 5)
+	else:
+		result = round(result, 4)	
+	return str(result)
+
+
+
+def checkInterest(eq):
+	eq = re.sub('[()]','',eq)	
+	tokens = eq.split(',')
+	interest = tokens[1]
+	return (interest in interests)
+
+
 
 
 def main():
@@ -94,8 +141,12 @@ def main():
 	print()
 
 	for i in range(len(tokens)):
-		if tokens[i][0]=='(':
-			tokens[i] = parseEquation(tokens[i])	
+		if tokens[i][0]=='(':			
+			check = checkInterest(tokens[i])
+			if check==True:
+				tokens[i] = parseEquation(tokens[i])					
+			else:
+				tokens[i] = solveEquation(tokens[i])
 
 
 	final_str = " ".join(tokens)
